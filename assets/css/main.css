@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add Your Custom CSS Here */
+@font-face {
+    font-family: 'c64mono';
+    src: url('https://cdn.devdojo.com/devblog/fonts/c64/c64mono.woff2') format('woff2'),
+         url('https://cdn.devdojo.com/devblog/fonts/c64/c64mono.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'c64';
+    src: url('https://cdn.devdojo.com/devblog/fonts/c64/c64.woff2') format('woff2'),
+         url('https://cdn.devdojo.com/devblog/fonts/c64/c64.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html{
+    font-family:c64, courier, monospaced;
+}
+
+html{
+    .font-mono{
+        font-family:c64mono, courier, monospaced;
+    }
+}
+
+
+body{
+    &.dark{
+        @apply bg-gray-900;
+        #darkToggle:hover{
+            .horizon{
+                border-color: #718096 !important;
+            }
+        }
+    }
+}
+
+.post{
+    p{
+        code{
+            @apply bg-gray-200 p-1 rounded;
+        }
+    }
+    pre{
+        @apply p-0 rounded overflow-hidden;
+    }
+}
+
+.post{
+    @apply text-white;
+    code{
+        @apply text-gray-200 bg-gray-700 p-1 rounded;
+    }
+    pre{
+        code{
+            @apply bg-transparent;
+        }
+    }
+    p{
+        @apply text-gray-400;
+        code{
+            @apply text-gray-200 bg-gray-700 p-1 rounded;
+        }
+    }
+    h1, h2, h3, h4, h5, h6, strong, i{
+        @apply text-gray-200;
+    }
+    a{
+        @apply text-gray-100;
+    }
+}
+
+article.prose {
+    h1{
+        @apply leading-normal text-commodore-100;
+    }
+    pre {
+        @apply -ml-5 -mr-5 rounded-none;
+        code{
+            @apply p-5;
+        }
+    }
+}

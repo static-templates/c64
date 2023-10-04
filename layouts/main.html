@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+
+    <!-- Used to add dark mode right away, adding here prevents any flicker -->
+    <script>
+        if (typeof (Storage) !== "undefined") {
+            if (localStorage.getItem('dark_mode') && localStorage.getItem('dark_mode') == 'true') {
+                document.documentElement.classList.add('dark');
+            }
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.png">
+    <script src="//unpkg.com/alpinejs" defer></script>
+    {tailwindcss}
+</head>
+
+<body class="antialiased transition-colors">
+
+    <div class="fixed min-h-screen min-w-screen w-full h-full bg-commodore-300 dark:bg-gray-700 top-0 left-0"></div>
+    <div class="relative bg-commodore-500 dark:bg-gray-900 mx-0 md:mx-24 my-2 md:my-20 overflow-auto">
+        <div class="relative w-full flex flex-col">
+            <a href="/" class="font-black text-xl md:text-2xl lg:text-3xl lg:text-4xl text-commodore-200 dark:text-gray-300 font-mono self-center my-12 hover:bg-commodore-100 hover:text-commodore-500  dark-hover:bg-gray-300 dark-hover:text-gray-800 px-2"><span class="hidden sm:inline">***</span>* My Blog *<span class="hidden sm:inline">***</span></a>
+            <nav class="relative flex flex-row-reverse sm:flex-row uppercase text-sm justify-center">
+                <div id="openMenu"
+                    class="block sm:hidden w-auto h-6 flex flex-col justify-center items-end cursor-pointer ml-4 text-lg text-commodore-200 dark:text-gray-400">
+                    Menu
+                </div>
+                <div id="closeMenu"
+                    class="fixed top-0 right-0 mr-6 rounded-lg mt-6 z-50 w-8 h-8 p-1 flex flex-col hidden sm:hidden justify-center items-end cursor-pointer ml-4">
+                    <svg class="w-6 h-6 text-commodore-300 dark:text-gray-600" fill="none" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                        <path d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </div>
+                <div id="menu"
+                    class="fixed top-0 right-0 h-screen sm:h-auto sm:relative flex flex-col justify-start hidden items-center sm:flex-row z-40 sm:flex w-full sm:w-64 text-xl sm:text-xl sm:w-auto pr-0 sm:pr-0 pt-20 sm:pt-0 text-commodore-200">
+                    <div
+                        class="absolute w-full h-full inset-0 bg-commodore-500 border-8 border-commodore-300 dark:border-gray-700 shadow-sm dark:bg-gray-900 top-0 right-0 block sm:hidden">
+                    </div>
+                    <ForEach collection="menu">
+                        <a href="{menu.url}"
+                            class="text-commodore-100 dark:text-gray-400 relative flex inline items-center px-2 mx-2 tracking-wide hover:bg-commodore-100 hover:text-commodore-500 dark-hover:bg-gray-300 dark-hover:text-gray-800">{menu.name}</a>
+                        <span class="text-commodore-300 dark:text-gray-500">/</span>
+                    </ForEach>
+                </div>
+                <div id="darkToggle"
+                    class="font-bold relative flex items-center pl-6 ml-4 cursor-pointer group tracking-wide">
+                    <div class="w-6 h-6 overflow-hidden flex justify-center items-center absolute left-0">
+                        <svg class="w-6 h-6 transform transition duration-700 ease absolute fill-current text-commodore-200 dark:text-gray-500"
+                            id="sun" viewBox="0 0 94 94" xmlns="http://www.w3.org/2000/svg">
+                            <g>
+                                <path
+                                    d="M23.931 66.238v3.84H20.07v3.85h-3.83v3.84h-3.859v3.85h7.689v-3.85h3.861v-3.84h3.83V66.238zM23.931 20.078v-3.84H20.07v-3.86h-7.689v3.86h3.859v3.84h3.83v3.85h3.861v3.84h3.83V20.078zM16.24 43.148H.86v7.71h19.21v-7.71zM77.76 77.762v-3.84h-3.83v-3.85h-3.861v-3.84h-3.83V73.922h3.83v3.84h3.861v3.85h7.689v-3.85zM77.76 12.372h-3.83v3.86h-3.861v3.84h-3.83V27.762h3.83v-3.84h3.861v-3.85h3.83v-3.84h3.859v-3.86zM47 73.922v.006h-3.859v19.22H47v-.005h3.859V73.922zM89.31 43.143H73.93V50.853h19.21V43.143zM47 .853v.005h-3.859v19.22H47v-.006h3.859V.853zM66.239 39.302V31.612H62.38v-3.85H54.689v-3.84H47v.006h-7.689v3.84H31.62v3.85h-3.859V39.308h-3.83V54.688h3.83V62.378h3.859v3.86H39.311v3.84H47v-.006h7.689v-3.84H62.38v-3.86h3.859V54.682h3.83V39.302z" />
+                            </g>
+                        </svg>
+                        <svg viewBox="0 0 94 94"
+                            class="w-6 h-6 transform transition duration-700 ease absolute hidden fill-current text-commodore-200 dark:text-gray-500"
+                            id="moon" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M89.311 54.694H81.621v3.85H70.07v3.841H50.859v-3.841h-7.718v-3.85h-3.83V46.994H35.45v-3.849h-3.829v-7.691H27.76V23.925h3.861v-7.691h3.829V.854h-7.69v3.84H20.07v3.85h-3.83v3.841h-3.859v3.849h-3.83v3.84H4.69v11.54H.86v30.771h3.83v7.689h3.861v3.851h3.83v3.84h3.859v3.849h3.83v3.84h3.86v3.851H35.45v3.84h23.101v-3.84H70.07v-3.851H77.76v-3.84h3.861v-3.849h3.828v-3.84h3.862v-3.851h3.83v-15.38z" />
+                        </svg>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        {slot}
+
+    </div>
+    <script src="/assets/js/main.js"></script>
+</body>
+
+</html>
