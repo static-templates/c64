@@ -20,10 +20,6 @@
 }
 
 html{
-    font-family:c64, courier, monospaced;
-}
-
-html{
     .font-mono{
         font-family:c64mono, courier, monospaced;
     }
