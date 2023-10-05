@@ -5,8 +5,6 @@ dateFormatted: July 27th, 2023
 image: /assets/images/posts/vintage-tech-01.jpg
 ---
 
-**Introduction**
-
 Hey, digital nomads and pixel perfectionists! 🌌 In our quest for the sleekest UIs and the most efficient algorithms, have we forgotten the tactile joy of analog tech? Let's take a nostalgic trip down memory lane and explore why vintage tech is making a comeback in our hyper-digital age.
 
 **The Allure of Analog**

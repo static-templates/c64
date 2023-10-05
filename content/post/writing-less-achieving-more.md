@@ -5,8 +5,6 @@ dateFormatted: July 27th, 2023
 image: /assets/images/posts/workspace.jpg
 ---
 
-**Introduction**
-
 Hey there, fellow code artisans and design enthusiasts! 🌿 In a world obsessed with more—more features, more functions, more everything—it's time we talk about the beauty of less. Dive with me into the world of minimalist code and discover how simplicity can be the ultimate sophistication.
 
 **The Philosophy Behind Minimalism**

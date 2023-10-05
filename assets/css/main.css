@@ -44,18 +44,18 @@ body{
 .post{
     p{
         code{
-            @apply bg-gray-200 p-1 rounded;
+            @apply p-1 bg-gray-200 rounded;
         }
     }
     pre{
-        @apply p-0 rounded overflow-hidden;
+        @apply p-0 overflow-hidden rounded;
     }
 }
 
 .post{
     @apply text-white;
     code{
-        @apply text-gray-200 bg-gray-700 p-1 rounded;
+        @apply p-1 text-gray-200 bg-gray-700 rounded;
     }
     pre{
         code{
@@ -65,7 +65,7 @@ body{
     p{
         @apply text-gray-400;
         code{
-            @apply text-gray-200 bg-gray-700 p-1 rounded;
+            @apply p-1 text-gray-200 bg-gray-700 rounded;
         }
     }
     h1, h2, h3, h4, h5, h6, strong, i{
@@ -73,17 +73,5 @@ body{
     }
     a{
         @apply text-gray-100;
-    }
-}
-
-article.prose {
-    h1{
-        @apply leading-normal text-commodore-100;
-    }
-    pre {
-        @apply -ml-5 -mr-5 rounded-none;
-        code{
-            @apply p-5;
-        }
     }
 }

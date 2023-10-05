@@ -5,10 +5,6 @@ dateFormatted: July 7th, 2023
 image: /assets/images/posts/perfect-coffee.jpg
 ---
 
-![Coffee and Code](/assets/images/posts/perfect-coffee.jpg)
-
-**Introduction**
-
 Greetings, fellow keyboard warriors and design dreamers! ☕️ Ever wondered why coffee shops are the unofficial office of developers and designers worldwide? Let's dive deep into the aromatic world of coffee and its symbiotic relationship with our craft.
 
 **Why Coffee and Coding Go Hand in Hand**

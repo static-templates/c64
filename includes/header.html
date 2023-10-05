@@ -1,0 +1,50 @@
+<div class="relative flex flex-row items-center justify-between w-full px-5 sm:flex-col sm:px-0 sm:items-center sm:pt-10">
+    <a href="/" class="block sm:mx-auto"><svg class="w-auto my-12 text-white fill-current h-7 sm:h-8" viewBox="0 0 221 51" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M204.559 7.328h-31.368V.7h31.368a3.312 3.312 0 0 1 3.311 3.311 3.305 3.305 0 0 1-3.311 3.317Z" fill="#D70101"/><path d="M214.728 18.17h-41.537V11.54h41.537a3.312 3.312 0 0 1 3.312 3.312 3.313 3.313 0 0 1-3.312 3.317Z" fill="#F48400"/><path d="M217.192 22.383h-28.129l-3.808 6.628h31.937a3.312 3.312 0 0 0 3.311-3.311 3.313 3.313 0 0 0-3.311-3.317Z" fill="#F1D801"/><path d="M214.728 33.224H182.84l-3.808 6.629h35.696a3.312 3.312 0 0 0 3.311-3.312 3.313 3.313 0 0 0-3.311-3.317Z" fill="#4ABB1F"/><path d="M204.559 44.065h-31.441v6.629h31.441a3.312 3.312 0 0 0 3.311-3.311 3.306 3.306 0 0 0-3.311-3.318Z" fill="#246CD7"/><path d="M180.419 29.06h-11.471V.7h-10.66l-27.21 28.354v10.66h27.21v10.974h10.66V39.719h5.351l6.12-10.66Zm-34.571 0 12.434-12.96v12.96h-12.434Z" fill="currentColor"/><path d="M113.905 19.828H99.323c-2.282 0-4.51.727-6.35 2.07v-7.62a2.92 2.92 0 0 1 2.918-2.918h18.577a2.92 2.92 0 0 1 2.918 2.918v.562h10.66c0-7.808-6.332-14.134-14.135-14.134H96.448c-7.81 0-14.135 6.332-14.135 14.134v21.405c0 7.809 6.332 14.134 14.135 14.134h17.457c7.809 0 14.135-6.331 14.135-14.134v-2.276c0-7.809-6.326-14.14-14.135-14.14Zm3.475 16.974a2.92 2.92 0 0 1-2.918 2.917H95.885a2.92 2.92 0 0 1-2.918-2.917v-3.396a2.92 2.92 0 0 1 2.918-2.918h18.577a2.92 2.92 0 0 1 2.918 2.918v3.396Z" fill="currentColor"/><path d="M40.782 45.658a32.324 32.324 0 0 1-1.302-1.586H16.545a3.312 3.312 0 0 0 0 6.622h30.272a26.59 26.59 0 0 1-6.035-5.036Z" fill="#246CD7"/><path d="M34.371 33.224H6.375a3.312 3.312 0 0 0 0 6.622h30.448a29.815 29.815 0 0 1-2.452-6.622Z" fill="#4ABB1F"/><path d="M33.481 25.7c0-1.12.061-2.221.176-3.317H3.911a3.312 3.312 0 0 0 0 6.622h29.74a33.116 33.116 0 0 1-.17-3.305Z" fill="#F1D801"/><path d="M36.823 11.541H6.375a3.312 3.312 0 0 0 0 6.623H34.37a30.154 30.154 0 0 1 2.452-6.623Z" fill="#F48400"/><path d="M40.782 5.742A26.618 26.618 0 0 1 46.817.7H16.544a3.312 3.312 0 0 0 0 6.622h22.942a26.78 26.78 0 0 1 1.296-1.58Z" fill="#D70101"/><path d="M62.646 40.034c-19.116 0-19.116-28.668 0-28.668h13.541l6.12-10.66h-19.66c-33.33 0-33.33 49.994 0 49.994h19.66l-6.12-10.66h-13.54v-.006Z" fill="currentColor"/></svg></a>
+    <nav class="relative flex flex-row-reverse justify-center text-sm uppercase sm:flex-row">
+        
+        <button id="closeMenu"
+            class="fixed top-0 right-0 uppercase z-50 flex items-center justify-center flex-shrink-0 hidden w-auto h-[138px] mr-8 font-mono text-xs rounded-lg cursor-pointer text-commodore-300 dark:text-gray-600 sm:hidden">
+            <span>Close Menu</span>
+        </button>
+        <div class="relative flex items-center font-mono text-commodore-300/80 dark:text-gray-600/100">
+            <span class="hidden pr-6 opacity-50 sm:inline">/****</span>
+            <div id="menu" class="fixed top-0 right-0 z-40 flex-col items-center justify-start hidden w-full h-screen pt-32 pr-0 font-mono text-xl sm:h-auto sm:relative sm:flex-row sm:flex sm:text-xl sm:w-auto sm:pr-0 sm:pt-0 text-commodore-200">
+                <div class="absolute inset-0 top-0 right-0 block w-full h-full border-8 shadow-sm bg-commodore-500 border-commodore-300 dark:border-gray-700 dark:bg-gray-900 sm:hidden"></div>
+                <ForEach collection="menu">
+                    <a 
+                        href="{menu.url}"
+                        class="relative flex items-center px-2 sm:px-1.5 py-2 sm:py-1 mx-2 text-xs tracking-wide menu-item text-commodore-100 dark:text-gray-400 hover:bg-commodore-100 hover:text-commodore-500 dark:hover:bg-gray-300 dark:hover:text-gray-800"
+                        data-inactive="text-commodore-100 dark:text-gray-400 hover:bg-commodore-100 hover:text-commodore-500 dark-hover:bg-gray-300 dark-hover:text-gray-800"
+                        data-active="bg-commodore-100 text-commodore-500 dark:bg-gray-300 dark:text-gray-800">
+                        <span>{menu.name}</span>
+                    </a>
+                    
+                </ForEach>
+                
+            </div>
+            <button id="openMenu" class="flex flex-col items-end justify-center block w-auto h-6 ml-4 text-xs uppercase cursor-pointer sm:hidden text-commodore-200 dark:text-gray-400">
+                Menu
+            </button>
+            <button id="darkToggle"
+                class="relative flex items-center ml-2 font-bold tracking-wide -translate-y-px cursor-pointer pr-7 group opacity-80 hover:opacity-100">
+                <div class="absolute left-0 flex items-center justify-center w-6 h-6 overflow-hidden">
+                    <svg class="absolute w-5 h-5 transition duration-700 transform fill-current ease text-commodore-200 dark:text-gray-300"
+                        id="sun" viewBox="0 0 94 94" xmlns="http://www.w3.org/2000/svg">
+                        <g>
+                            <path
+                                d="M23.931 66.238v3.84H20.07v3.85h-3.83v3.84h-3.859v3.85h7.689v-3.85h3.861v-3.84h3.83V66.238zM23.931 20.078v-3.84H20.07v-3.86h-7.689v3.86h3.859v3.84h3.83v3.85h3.861v3.84h3.83V20.078zM16.24 43.148H.86v7.71h19.21v-7.71zM77.76 77.762v-3.84h-3.83v-3.85h-3.861v-3.84h-3.83V73.922h3.83v3.84h3.861v3.85h7.689v-3.85zM77.76 12.372h-3.83v3.86h-3.861v3.84h-3.83V27.762h3.83v-3.84h3.861v-3.85h3.83v-3.84h3.859v-3.86zM47 73.922v.006h-3.859v19.22H47v-.005h3.859V73.922zM89.31 43.143H73.93V50.853h19.21V43.143zM47 .853v.005h-3.859v19.22H47v-.006h3.859V.853zM66.239 39.302V31.612H62.38v-3.85H54.689v-3.84H47v.006h-7.689v3.84H31.62v3.85h-3.859V39.308h-3.83V54.688h3.83V62.378h3.859v3.86H39.311v3.84H47v-.006h7.689v-3.84H62.38v-3.86h3.859V54.682h3.83V39.302z" />
+                        </g>
+                    </svg>
+                    <svg viewBox="0 0 94 94"
+                        class="absolute hidden w-5 h-5 transition duration-700 transform fill-current ease text-commodore-200 dark:text-gray-300"
+                        id="moon" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M89.311 54.694H81.621v3.85H70.07v3.841H50.859v-3.841h-7.718v-3.85h-3.83V46.994H35.45v-3.849h-3.829v-7.691H27.76V23.925h3.861v-7.691h3.829V.854h-7.69v3.84H20.07v3.85h-3.83v3.841h-3.859v3.849h-3.83v3.84H4.69v11.54H.86v30.771h3.83v7.689h3.861v3.851h3.83v3.84h3.859v3.849h3.83v3.84h3.86v3.851H35.45v3.84h23.101v-3.84H70.07v-3.851H77.76v-3.84h3.861v-3.849h3.828v-3.84h3.862v-3.851h3.83v-15.38z" />
+                    </svg>
+                </div>
+            </button>
+            
+            <span class="hidden pl-6 opacity-50 sm:inline">****/</span>
+        </div>
+    </nav>
+</div>

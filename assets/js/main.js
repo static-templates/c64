@@ -1,17 +1,15 @@
-let bodyEl = document.body;
-
 if ( localStorage.getItem('dark') ) {
-    bodyEl.classList.add('dark');
+    document.documentElement.classList.add('dark');
     showNight();
 } else {
     showDay();
 }
 
-bodyEl.classList.add('transition-colors');
+document.body.classList.add('transition-colors');
 
 document.getElementById('darkToggle').addEventListener('click', function(){
-    bodyEl.classList.add('duration-300');
-    if(bodyEl.classList.contains('dark')){
+    document.body.classList.add('duration-300');
+    if(document.documentElement.classList.contains('dark')){
         localStorage.removeItem('dark');
         showDay();
     } else {
@@ -33,11 +31,29 @@ document.getElementById('closeMenu').addEventListener('click', function(){
 function showDay(){
     document.getElementById('moon').classList.add('hidden');
     document.getElementById('sun').classList.remove('hidden');
-    bodyEl.classList.remove('dark');
+    document.documentElement.classList.remove('dark');
 }
 
 function showNight(){
     document.getElementById('moon').classList.remove('hidden');
     document.getElementById('sun').classList.add('hidden');
-    bodyEl.classList.add('dark');
+    document.documentElement.classList.add('dark');
 }
+
+document.addEventListener('DOMContentLoaded', function(){
+    // set the active menu item
+    let path = window.location.pathname;
+    // for each menu item .menu-item add class
+    const menuItems = document.querySelectorAll('.menu-item');
+    menuItems.forEach(item => {
+        const href = item.getAttribute('href');
+        if (href === path) {
+            activeClasses = item.dataset.active.split(' ');
+            item.classList.add(...activeClasses);
+        } else {
+            inactiveClasses = item.dataset.inactive.split(' ');
+            item.classList.add(...inactiveClasses);
+        }
+        
+    });
+});

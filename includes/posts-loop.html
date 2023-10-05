@@ -1,13 +1,17 @@
+<section class="space-y-10 divide-y divide-commodore-400 dark:divide-gray-700">
+
 <ForEach content="post" as="post" count="{count}">
 
-    <div class="cursor-pointer md:p-4 pt-8 mb-10" onClick="window.location='{post.link}'">
+    <div class="relative pt-10 cursor-pointer" onClick="window.location='{post.link}'">
         <h2 class="mb-4">
-            <a href="{post.link}" class="text-xl border-b-4 border-commodore-200 dark:border-gray-500 dark-hover:border-transparent hover:border-transparent sm:text-xl tracking-tighter leading-tighter font-bold font-mono text-commodore-100 dark:text-gray-200 px-1 py-1 inline-block hover:bg-commodore-100 hover:text-commodore-500 dark-hover:bg-gray-300 dark-hover:text-gray-800">{post.title}</a>
+            <a href="{post.link}" class="inline-block w-auto px-1 py-1 font-mono text-base font-bold tracking-tighter leading-tighter text-commodore-100 dark:text-gray-200 hover:bg-commodore-100 hover:text-commodore-500 dark:hover:bg-gray-300 dark:hover:text-gray-800">{post.title}</a>
         </h2>
-        <span class="text-commodore-300 dark:text-gray-300 text-xs uppercase tracking-widest font-medium py-1 inline-block mb-2">{post.dateFormatted}</span>
-        <p class="text-commodore-200 dark:text-gray-500 leading-loose">
+        <!-- <span class="inline-block py-1 mb-2 text-xs font-bold tracking-widest uppercase text-commodore-300 dark:text-gray-300">{post.dateFormatted}</span> -->
+        <p class="text-sm font-medium text-commodore-300 dark:text-gray-500">
             <span>{post.description}</span>
         </p>
     </div>
-
 </ForEach>
+
+
+</section>
